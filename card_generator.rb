@@ -1,12 +1,12 @@
-class CardGenerator
+ class CardGenerator
   attr_reader :shapes, :colors, :fills, :numbers
 
 
   def initialize
     @numbers = [1,2,3]
-    @shapes = ["oval", "square", "circle"]
+    @shapes = ["diamond", "square", "circle"]
     @colors = ["red", "green", "blue"]
-    @fills = ["plain", "no_fill", "pattern"]
+    @fills = ["plain", "jupiter", "hideout"]
   end
 
   def generate_cards(number)

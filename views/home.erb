@@ -3,27 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title> The Card Game </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./cards.css">
 </head>
 <body>
-  <div> I guess this is working well </div>
-  <% cards.each_with_index do |card, index| %>
-    <div>
-      <p> Card <%= index + 1 %></p>
-      <p> Number: <%= card[:number] %></p>
-      <p> Shape: <%= card[:shape] %> </p>
-      <p> Color: <%= card[:color] %> </p>
-      <p> Fill: <%= card[:fill] %> </p>
+  <div class="container text-center mt-5">
+    <h3> Card Set Game Checker! </h3>
+    <p> Cards have 4 attributes. A set happens when all attributes <br> are the same or different between cards.</p>
+    <div class="container-cards">
+      <% cards.each_with_index do |card, index| %>
+        <div>
+          <div class="card mb-3 <%= card[:fill] %>">
+            <div class="card-body card-set">
+            <%  card[:number].times do %>
+              <%  style = card[:shape] + " " + card[:color] %>
+              <div class="<%= style %>"></div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-<h3> <%= set.to_s %></h3>
-<% if set == true  %>
-  <button> There is a Set ! </button>
-<% else %>
-  <button> There's no Set! </button>
-<% end %>
+    <h3> <%= set ? "There is a Set!" : "There is no set" %></h3>
 
-<a href="/"> Give me new numbers! </a>
+    <a href="/"> Gimme New Cards! </a>
+
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
