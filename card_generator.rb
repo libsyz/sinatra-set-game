@@ -1,7 +1,6 @@
  class CardGenerator
   attr_reader :shapes, :colors, :fills, :numbers
 
-
   def initialize
     @numbers = [1,2,3]
     @shapes = ["diamond", "square", "circle"]

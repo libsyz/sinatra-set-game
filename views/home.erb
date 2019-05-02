@@ -26,12 +26,17 @@
       <% end %>
     </div>
 
-    <h3> <%= set ? "There is a Set!" : "There is no Set" %></h3>
+    <% if set %>
+      <h3 class="you-got-set"> You got a Set! </h3>
+    <% else %>
+      <h3 class="no-set"> There's no Set! </h3>
+    <% end %>
 
     <a href="/"> Gimme Random Cards! </a> <br>
     <a href="/set"> Gimme a Set! </a>
 
   </div>
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>

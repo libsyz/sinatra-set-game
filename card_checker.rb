@@ -2,7 +2,8 @@
 class CardChecker
   def is_set?(cards)
     @cards = cards
-    set(:number) && set(:color) && set(:shape) && set(:fill)
+    attributes = [:number, :color, :shape, :fill]
+    attributes.all? { |attr| set(attr) }
   end
 
   def set(key)
