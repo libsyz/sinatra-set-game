@@ -9,6 +9,7 @@
   <% cards.each_with_index do |card, index| %>
     <div>
       <p> Card <%= index + 1 %></p>
+      <p> Number: <%= card[:number] %></p>
       <p> Shape: <%= card[:shape] %> </p>
       <p> Color: <%= card[:color] %> </p>
       <p> Fill: <%= card[:fill] %> </p>
@@ -21,6 +22,8 @@
 <% else %>
   <button> There's no Set! </button>
 <% end %>
+
+<a href="/"> Give me new numbers! </a>
 
 </body>
 </html>
