@@ -9,13 +9,18 @@
   <% cards.each_with_index do |card, index| %>
     <div>
       <p> Card <%= index + 1 %></p>
-      <p> Shape: <%= card.shape %> </p>
-      <p> Color: <%= card.color %> </p>
-      <p> Fill: <%= card.fill %> </p>
+      <p> Shape: <%= card[:shape] %> </p>
+      <p> Color: <%= card[:color] %> </p>
+      <p> Fill: <%= card[:fill] %> </p>
     </div>
   <% end %>
 
-  <button> There is a set! </button>
-  <button> There is no set! </button>
+<h3> <%= set.to_s %></h3>
+<% if set == true  %>
+  <button> There is a Set ! </button>
+<% else %>
+  <button> There's no Set! </button>
+<% end %>
+
 </body>
 </html>

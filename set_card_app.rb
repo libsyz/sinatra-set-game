@@ -5,8 +5,8 @@ class MyApp < Sinatra::Base
     cg = CardGenerator.new
     checker = CardChecker.new
     cards = cg.generate_cards(3)
-    set? = cg.set?
-    erb :home, locals: {cards: cards, set?: set?}
+    set = checker.is_set?(cards)
+    erb :home, locals: {cards: cards, set: set}
   end
 end
 

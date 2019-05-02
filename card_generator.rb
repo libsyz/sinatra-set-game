@@ -11,9 +11,11 @@ class CardGenerator
   def generate_cards(number)
     cards = []
     number.times do
-      card = Hash.new(shape: shapes.sample,
-                      color: color.sample,
-                      fill: fills.sample)
+      card = {}
+      card[:shape] = shapes.sample
+      card[:color] = colors.sample
+      card[:fill] = fills.sample
+
       cards << card
     end
     cards
