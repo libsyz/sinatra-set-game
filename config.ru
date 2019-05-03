@@ -4,8 +4,7 @@ require 'bundler'
 
 Bundler.require
 
-require './card_generator'
-require './card_checker'
+require './my_helpers'
 require './set_card_app'
 
 run MyApp
