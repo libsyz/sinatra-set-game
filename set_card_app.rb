@@ -2,7 +2,7 @@ require_relative 'card_generator'
 require_relative 'card_checker'
 
 class MyApp < Sinatra::Base
-  helpers MyApp
+  helpers MyHelpers
 
   get "/" do
     binding.pry
