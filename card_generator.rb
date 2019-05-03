@@ -1,21 +1,20 @@
- class CardGenerator
-  attr_reader :shapes, :colors, :fills, :numbers
+require 'sinatra/base'
 
-  def initialize
+module MyHelpers
+ module CardGenerator
     @numbers = [1,2,3]
     @shapes = ["diamond", "square", "circle"]
     @colors = ["red", "green", "blue"]
     @fills = ["plain", "jupiter", "hideout"]
-  end
 
   def generate_cards(number)
     cards = []
     number.times do
       card = {}
-      card[:number] = numbers.sample
-      card[:shape] = shapes.sample
-      card[:color] = colors.sample
-      card[:fill] = fills.sample
+      card[:number] = @numbers.sample
+      card[:shape] = @shapes.sample
+      card[:color] = @colors.sample
+      card[:fill] = @fills.sample
 
       cards << card
     end
@@ -29,5 +28,6 @@
     card_3 = {number: 3, shape: 'square', color: 'blue', fill: 'plain'}
     cards << card_1 << card_2 << card_3
   end
-
 end
+end
+

@@ -1,20 +1,22 @@
+require_relative 'card_generator'
+require_relative 'card_checker'
 
 class MyApp < Sinatra::Base
+  helpers MyApp
 
   get "/" do
-    cg = CardGenerator.new
-    checker = CardChecker.new
-    cards = cg.generate_cards(3)
+    binding.pry
+    cards = generate_cards(3)
     set = checker.is_set?(cards)
     erb :home, locals: {cards: cards, set: set}
   end
 
   get '/set' do
-    cg = CardGenerator.new
-    checker = CardChecker.new
-    cards = cg.generate_set
-    set = checker.is_set?(cards)
-    erb :home, locals: {cards: cards, set: set}
+    cards = generate_cards(3)
+    while is_set?(cards) == false
+      cg.generate_cards(3)
+    end
+    erb :home, locals: {cards: cards, set: true}
   end
 end
 
